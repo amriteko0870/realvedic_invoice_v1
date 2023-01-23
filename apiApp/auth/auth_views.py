@@ -21,5 +21,13 @@ def login(request,format=None):
                 'user_type':user_creds.user_type,
                 'token':user_creds.token
               }
+        return Response(res)
+
+    else:
+        res = { 
+                'status':False,
+                'message':'invalid credentials'
+              }
+        return Response(res)
         
-    return Response(res)
+    
